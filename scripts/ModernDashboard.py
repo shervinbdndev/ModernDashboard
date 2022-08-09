@@ -2,6 +2,7 @@ try:
     import tkxui
     import sv_ttk
     import random
+    import tkinter
     import threading
     import darkdetect
     import tkinter.ttk as ttk
@@ -54,6 +55,8 @@ class App:
             }
         })
         
+        # self.values = ['Default Theme' , 'Default Theme' ,'Blue Theme' ,'Purple Theme' ]
+        
         self.newSubs = ['5,097' , '4,845' , '8,547' , '2,318' , '9,241']
         self.strms = ['47,403' , '87,238' , '12,983' , '55,632' , '36,749']
         self.engRate = ['25.81' , '21.32' , '11.53' , '60.89' , '46.95' , '82.64']
@@ -68,6 +71,7 @@ class App:
         self.svSpend = ['$1,402' , '$1,202' , '$1,453' , '$1,369' , '$1,571' , '$1,954']
         
         self.systemTheme = darkdetect.theme()
+        self.svSelectThemes = tkinter.StringVar()
         
         @final
         def dynamicSubscribersValuesSetter() -> Literal[None]:
@@ -98,6 +102,15 @@ class App:
             self.income.configure(text=random.choice(seq=self.svIncome))
             self.spend.configure(text=random.choice(seq=self.svSpend))
             self.root.after(ms=1200 , func=dynamicIncomeSpendValueSetter)
+            
+        # @final
+        # def setApplicationThemeByUserSelection(choice) -> Literal[None]:
+        #     if (choice == 'Default Theme'):
+        #         pass
+        #     elif (choice == 'Blue Theme'):
+        #         self.btnProfilePic.configure(fg_color=Materials.Colors.belizehole)
+        #         self.btnPlus.configure(fg_color=Materials.Colors.belizehole)
+        #         self.btnPodcasts.configure(fg_color=Materials.Colors.belizehole)
             
         @final
         def startThreads():
@@ -147,7 +160,7 @@ class App:
                 self.btnChannels.configure(fg_color=Materials.Colors.lightgrey , hover_color=Materials.Colors.grey)
                 self.btnReports.configure(fg_color=Materials.Colors.lightgrey , hover_color=Materials.Colors.grey)
                 self.btnLeftFrameInnerBottom.configure(fg_color=Materials.Colors.lightgrey , hover_color=Materials.Colors.grey)
-                self.leftFrameInnerBottom.configure(fg_color=Materials.Colors.darkgrey)
+                self.leftFrameInnerBottom.configure(fg_color=Materials.Colors.grey2)
                 self.frame1.configure(fg_color=Materials.Colors.dark3)
                 self.frame2.configure(fg_color=Materials.Colors.dark3)
                 self.frame3.configure(fg_color=Materials.Colors.dark3)
@@ -460,8 +473,8 @@ class App:
         )
         
         ttk.Label(master=self.leftFrameInnerBottom , text='PC' , background=Materials.Colors.green , foreground=Materials.Colors.white , font=('Vani' , 15 , Materials.FontWeight.bold)).place(relx=0.12 , rely=0.5 , anchor=Materials.Alignments.center)
-        ttk.Label(master=self.leftFrameInnerBottom , text='Podcaster' , background=[Materials.Colors.dark5 if darkdetect.isDark() else Materials.Colors.darkgrey] , font=('Vani' , 11 , Materials.FontWeight.bold)).place(relx=0.35 , rely=0.35 , anchor=Materials.Alignments.center)
-        ttk.Label(master=self.leftFrameInnerBottom , text='ver. 0.234' , background=[Materials.Colors.dark5 if darkdetect.isDark() else Materials.Colors.darkgrey] , foreground=Materials.Colors.grey , font=('Vani' , 10 , Materials.FontWeight.normal)).place(relx=0.33 , rely=0.62 , anchor=Materials.Alignments.center)
+        ttk.Label(master=self.leftFrameInnerBottom , text='Podcaster' , background=[Materials.Colors.dark5 if darkdetect.isDark() else Materials.Colors.grey2] , font=('Vani' , 11 , Materials.FontWeight.bold)).place(relx=0.35 , rely=0.35 , anchor=Materials.Alignments.center)
+        ttk.Label(master=self.leftFrameInnerBottom , text='ver. 0.234' , background=[Materials.Colors.dark5 if darkdetect.isDark() else Materials.Colors.grey2] , foreground=Materials.Colors.white , font=('Vani' , 10 , Materials.FontWeight.normal)).place(relx=0.33 , rely=0.62 , anchor=Materials.Alignments.center)
         
         self.btnLeftFrameInnerBottom = Button(
             master=self.leftFrameInnerBottom ,
@@ -688,6 +701,21 @@ class App:
             rely=0.12 ,
             anchor=Materials.Alignments.center ,
         )
+        
+        # self.options = ttk.OptionMenu(
+        #     self.tabStyle ,
+        #     self.svSelectThemes ,
+        #     command=setApplicationThemeByUserSelection ,
+        #     *self.values ,
+        # )
+        
+        # self.options.place(
+        #     relx=0.5 ,
+        #     rely=0.5 ,
+        #     anchor=Materials.Alignments.center ,
+        # )
+        
+        # self.svSelectThemes.set(value=self.values[0])
         
         startThreads()
         setThemeByOperatingSystem()

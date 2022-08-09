@@ -26,10 +26,13 @@ class Materials:
         green2: Union[str , AnyStr] = '#078B5D'
         green3: Union[str , AnyStr] = '#3DCA9D'
         grey: Union[str , AnyStr] = '#999999'
+        grey2: Union[str , AnyStr] = '#999999'
         darkgrey: Union[str , AnyStr] = '#696969'
         lightgrey: Union[str , AnyStr] = '#D1D5D8'
         tomato: Union[str , AnyStr] = '#F3350C'
         red: Union[str , AnyStr] = '#A8362B'
+        # belizehole: Union[str , AnyStr] = '#2980B9'
+        # peterriver: Union[str , AnyStr] = '#3498DB'
         
     class Cursors:
         hand: str = 'hand2'
