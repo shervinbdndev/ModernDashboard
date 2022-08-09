@@ -11,9 +11,9 @@
 <br><br><br>
 <div align='center'>
     <p>Preview</p>
-    <img style='border-radius:5px' src="https://github.com/shervinbdndev/ModernDashboard/blob/master/view/dm.jpg"></img>
+    <img style='border-radius:5px' src="https://github.com/shervinbdndev/ModernDashboard/blob/master/view/dm.png"></img>
     <br><br>
-    <img style='border-radius:5px' src="https://github.com/shervinbdndev/ModernDashboard/blob/master/view/lm.jpg"></img>
+    <img style='border-radius:5px' src="https://github.com/shervinbdndev/ModernDashboard/blob/master/view/lm.png"></img>
 </div>
 
 <hr>
