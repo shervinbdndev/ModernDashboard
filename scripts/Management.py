@@ -27,6 +27,7 @@ class Materials:
         green3: Union[str , AnyStr] = '#3DCA9D'
         grey: Union[str , AnyStr] = '#999999'
         grey2: Union[str , AnyStr] = '#999999'
+        whitesmoke: Union[str , AnyStr] = '#F5F5F5'
         darkgrey: Union[str , AnyStr] = '#696969'
         lightgrey: Union[str , AnyStr] = '#D1D5D8'
         tomato: Union[str , AnyStr] = '#F3350C'

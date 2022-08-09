@@ -160,7 +160,7 @@ class App:
                 self.btnChannels.configure(fg_color=Materials.Colors.lightgrey , hover_color=Materials.Colors.grey)
                 self.btnReports.configure(fg_color=Materials.Colors.lightgrey , hover_color=Materials.Colors.grey)
                 self.btnLeftFrameInnerBottom.configure(fg_color=Materials.Colors.lightgrey , hover_color=Materials.Colors.grey)
-                self.leftFrameInnerBottom.configure(fg_color=Materials.Colors.grey2)
+                self.leftFrameInnerBottom.configure(fg_color=Materials.Colors.whitesmoke)
                 self.frame1.configure(fg_color=Materials.Colors.dark3)
                 self.frame2.configure(fg_color=Materials.Colors.dark3)
                 self.frame3.configure(fg_color=Materials.Colors.dark3)
@@ -473,8 +473,8 @@ class App:
         )
         
         ttk.Label(master=self.leftFrameInnerBottom , text='PC' , background=Materials.Colors.green , foreground=Materials.Colors.white , font=('Vani' , 15 , Materials.FontWeight.bold)).place(relx=0.12 , rely=0.5 , anchor=Materials.Alignments.center)
-        ttk.Label(master=self.leftFrameInnerBottom , text='Podcaster' , background=[Materials.Colors.dark5 if darkdetect.isDark() else Materials.Colors.grey2] , font=('Vani' , 11 , Materials.FontWeight.bold)).place(relx=0.35 , rely=0.35 , anchor=Materials.Alignments.center)
-        ttk.Label(master=self.leftFrameInnerBottom , text='ver. 0.234' , background=[Materials.Colors.dark5 if darkdetect.isDark() else Materials.Colors.grey2] , foreground=Materials.Colors.white , font=('Vani' , 10 , Materials.FontWeight.normal)).place(relx=0.33 , rely=0.62 , anchor=Materials.Alignments.center)
+        ttk.Label(master=self.leftFrameInnerBottom , text='Podcaster' , background=[Materials.Colors.dark5 if darkdetect.isDark() else Materials.Colors.whitesmoke] , font=('Vani' , 11 , Materials.FontWeight.bold)).place(relx=0.35 , rely=0.35 , anchor=Materials.Alignments.center)
+        ttk.Label(master=self.leftFrameInnerBottom , text='ver. 0.234' , background=[Materials.Colors.dark5 if darkdetect.isDark() else Materials.Colors.whitesmoke] , foreground=Materials.Colors.grey2 , font=('Vani' , 10 , Materials.FontWeight.normal)).place(relx=0.33 , rely=0.62 , anchor=Materials.Alignments.center)
         
         self.btnLeftFrameInnerBottom = Button(
             master=self.leftFrameInnerBottom ,
