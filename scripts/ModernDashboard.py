@@ -57,50 +57,37 @@ class App:
         
         # self.values = ['Default Theme' , 'Default Theme' ,'Blue Theme' ,'Purple Theme' ]
         
-        self.newSubs = ['5,097' , '4,845' , '8,547' , '2,318' , '9,241']
-        self.strms = ['47,403' , '87,238' , '12,983' , '55,632' , '36,749']
-        self.engRate = ['25.81' , '21.32' , '11.53' , '60.89' , '46.95' , '82.64']
-        self.avgwt = ['45,4 min' , '32,1 min' , '50,7 min' , '12,2 min' , '23.8 min']
-        
-        self.sbsPercent = ['+33.45%' , '+12.32%' , '+50.45%' , '+85.26%' , '+74.99%']
-        self.strmsPercent = ['-112.45%' , '-150.26%' , '-80.12%' , '-64.38%' , '-32.67%' , '-200.39%']
-        self.engPercent = ['+62.52%' , '+90.54%' , '+23.21%' , '+112.35%' , '+76.93%' , '+51.61%']
-        self.agwtPercent = ['+4.46%' , '+9.15%' , '+40.65%' , '+26.94%' , '+2.12%']
-        
-        self.svIncome = ['$2,205' , '$1,400' , '$5,920' , '$3,780' , '$9,426' , '$1,258']
-        self.svSpend = ['$1,402' , '$1,202' , '$1,453' , '$1,369' , '$1,571' , '$1,954']
-        
         self.systemTheme = darkdetect.theme()
         self.svSelectThemes = tkinter.StringVar()
         
         @final
         def dynamicSubscribersValuesSetter() -> Literal[None]:
-            self.newSubscribers.configure(text=random.choice(seq=self.newSubs))
-            self.subsPercent.configure(text=random.choice(seq=self.sbsPercent))
+            self.newSubscribers.configure(text=f'{random.randint(a=2318 , b=9241):,}')
+            self.subsPercent.configure(text=f"+{random.uniform(a=33.45 , b=74.99):.2f}%")
             self.root.after(ms=1500 , func=dynamicSubscribersValuesSetter)
             
         @final
         def dynamicStreamsValuesSetter() -> Literal[None]:
-            self.streams.configure(text=random.choice(seq=self.strms))
-            self.streamsPercent.configure(text=random.choice(seq=self.strmsPercent))
+            self.streams.configure(text=f'{random.randint(a=12983 , b=87238):,}')
+            self.streamsPercent.configure(text=f"-{random.uniform(a=32.67 , b=200.39):.2f}%")
             self.root.after(ms=2500 , func=dynamicStreamsValuesSetter)
             
         @final
         def dynamicEngagementRateValuesSetter() -> Literal[None]:
-            self.engagementRate.configure(text=random.choice(seq=self.engRate))
-            self.engagementPercent.configure(text=random.choice(seq=self.engPercent))
+            self.engagementRate.configure(text=f'{random.uniform(a=11.53 , b=82.64):.2f}')
+            self.engagementPercent.configure(text=f"+{random.uniform(a=23.21 , b=112.35):.2f}%")
             self.root.after(ms=1000 , func=dynamicEngagementRateValuesSetter)
             
         @final
         def dynamicAvgWatchtimeValuesSetter() -> Literal[None]:
-            self.avgWatchtime.configure(text=random.choice(seq=self.avgwt))
-            self.avgWatchPercent.configure(text=random.choice(seq=self.agwtPercent))
+            self.avgWatchtime.configure(text=f'{random.uniform(a=12.2 , b=50.7):.1f} min')
+            self.avgWatchPercent.configure(text=f"+{random.uniform(a=2.12 , b=40.65):.2f}%")
             self.root.after(ms=3000 , func=dynamicAvgWatchtimeValuesSetter)
             
         @final
         def dynamicIncomeSpendValueSetter() -> Literal[None]:
-            self.income.configure(text=random.choice(seq=self.svIncome))
-            self.spend.configure(text=random.choice(seq=self.svSpend))
+            self.income.configure(text=f'${random.randint(a=1258 , b=9426):,}')
+            self.spend.configure(text=f'${random.randint(a=1202 , b=1954):,}')
             self.root.after(ms=1200 , func=dynamicIncomeSpendValueSetter)
             
         # @final
